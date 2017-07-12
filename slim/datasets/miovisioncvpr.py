@@ -29,11 +29,10 @@ from datasets import dataset_utils
 
 slim = tf.contrib.slim
 
-_FILE_PATTERN = 'flowers_%s_*.tfrecord'
+_FILE_PATTERN = 'miovisioncvpr_%s_*.tfrecord'
 
 # TOTAL: 518814. 80/20 split
 SPLITS_TO_SIZES = {'train': 415051, 'validation': 103763}
-SPLITS_TO_SIZES = {'train': 518464, 'validation': 350}
 
 _NUM_CLASSES = 11
 

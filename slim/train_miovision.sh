@@ -1,6 +1,6 @@
-DATASET_DIR=/data2/user_data/rlouie/miovision_cvpr
-TRAIN_DIR=/tmp/train_miovision/
-CHECKPOINT_PATH=/tmp/checkpoints/mobilenet_v1_1.0_128.ckpt
+DATASET_DIR=${HOME}/datasets/MIO-TCD-Classification
+TRAIN_DIR=${HOME}/training/MIO-TCD-Classification/
+CHECKPOINT_PATH=${HOME}/checkpoints/mobilenet_v1_1.0_128.ckpt
 
 python train_image_classifier.py \
     --train_dir=${TRAIN_DIR} \
