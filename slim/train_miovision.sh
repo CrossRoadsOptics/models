@@ -1,6 +1,6 @@
 DATASET_DIR=/data2/user_data/rlouie/miovision_cvpr
 TRAIN_DIR=/tmp/train_miovision/
-CHECKPOINT_PATH=/tmp/checkpoints/mobilenet_v1_1.0_224.ckpt
+CHECKPOINT_PATH=/tmp/checkpoints/mobilenet_v1_1.0_128.ckpt
 
 python train_image_classifier.py \
     --train_dir=${TRAIN_DIR} \
@@ -8,6 +8,7 @@ python train_image_classifier.py \
     --dataset_name=miovisioncvpr \
     --dataset_split_name=train \
     --model_name=mobilenet_v1 \
+    --train_image_size=128 \
     --checkpoint_path=${CHECKPOINT_PATH} \
     --checkpoint_exclude_scopes=MobilenetV1/Logits \
     --trainable_scopes=MobilenetV1/Logits

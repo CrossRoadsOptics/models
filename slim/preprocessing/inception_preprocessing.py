@@ -194,7 +194,17 @@ def preprocess_for_train(image, height, width, bbox,
                                                   bbox)
     tf.summary.image('image_with_bounding_boxes', image_with_box)
 
-    distorted_image, distorted_bbox = distorted_bounding_box_crop(image, bbox)
+    # Ours
+    distorted_image, distorted_bbox = distorted_bounding_box_crop(
+            image,
+            bbox,
+            min_object_covered=0.75, # more of bounding box, since bounding boxes are pretty good 
+            aspect_ratio_range=(0.95, 1.05), # random squarish crops
+            area_range=(0.05, 1.0), # default. redundant since image area is equal to bbox area
+            max_attempts=100)
+    # Theirs
+    # distorted_image, distorted_bbox = distorted_bounding_box_crop(image, bbox)
+
     # Restore the shape since the dynamic slice based upon the bbox_size loses
     # the third dimension.
     distorted_image.set_shape([None, None, 3])
