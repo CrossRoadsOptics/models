@@ -6,5 +6,5 @@ ${HOME}/apps/tensorflow/bazel-bin/tensorflow/python/tools/freeze_graph \
     --input_checkpoint=${CHECKPOINT} \
     --input_binary=true \
     --output_graph=${OUTPUT_GRAPH} \
-    --output_node_names=MobilenetV1/Predictions/Reshape_1
+    --output_node_names=MobilenetsV1/Predictions/Reshape_1
 
